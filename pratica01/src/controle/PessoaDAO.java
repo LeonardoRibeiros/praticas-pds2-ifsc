@@ -18,7 +18,7 @@ public class PessoaDAO {
 		con = Conexao.getInstacia();
 		Connection c = con.conectar();
 		try {
-			String query = "Insert INto pessoa(cpf, nome)values(?,?);";
+			String query = "Insert into pessoa(cpf, nome)values(?,?);";
 			PreparedStatement stm = c.prepareStatement(query);
 			stm.setLong(1, 123);
 			stm.setString(2, "Elieie");
