@@ -18,14 +18,12 @@ public class PessoaDAO {
 		con = Conexao.getInstacia();
 		Connection c = con.conectar();
 		try {
-			String query = "Insert into pessoa(cpf, nome)values(?,?);";
+			String query = "INSERT into pessoa(cpf, nome) VALUES(?,?);";
 			PreparedStatement stm = c.prepareStatement(query);
-			stm.setLong(1, 123);
-			stm.setString(2, "Elieie");
-			
+			stm.setLong(1, pessoa.getCpf());
+			stm.setString(2, pessoa.getNome());
 			int valida = stm.executeUpdate();
-		
-		
+		return true;
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -33,18 +31,35 @@ public class PessoaDAO {
 		return false;			
 	}
 	
-	public boolean atualizar(Pessoa pessoa) {
-		con = Conexao.getInstacia();
-		con.conectar();
+	public boolean alterar(Pessoa pessoa) {
+		Connection conn = Conexao.getInstacia().conectar();
+		try {
+			String query = "UPDATE pessoa SET nome = ? WHERE cpf = ?";
+			PreparedStatement stm = conn.prepareStatement(query);
+			stm.setString(1, "Leonardo Ribeiro");
+			stm.setLong(2, pessoa.getCpf());
+			int valida = stm.executeUpdate();
+		return true;
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		con.fecharConexao();
-		return false;
+		return false;			
 	}
 	
-	public boolean deleter(Pessoa pessoa){
-		con = Conexao.getInstacia();
-		con.conectar();
+	public boolean deletar(Pessoa pessoa){
+		Connection conn = Conexao.getInstacia().conectar();
+		try {
+			String query = "DELETE FROM pessoa WHERE cpf = ?";
+			PreparedStatement stm = conn.prepareStatement(query);
+			stm.setLong(1, pessoa.getCpf());
+			int valida = stm.executeUpdate();
+		return true;
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		con.fecharConexao();
-		return false;
+		return false;			
 	}
 	
 	public ArrayList<Pessoa>listarPessoas(){
