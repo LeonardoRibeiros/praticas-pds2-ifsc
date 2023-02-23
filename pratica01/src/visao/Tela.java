@@ -18,6 +18,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.MatteBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Tela extends JFrame {
 
@@ -66,6 +68,10 @@ public class Tela extends JFrame {
 		cpftxt.setColumns(10);
 		
 		JButton btcadastrar = new JButton("Cadastrar");
+		btcadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btcadastrar.setFocusPainted(false);
 		btcadastrar.setForeground(new Color(255, 255, 255));
 		btcadastrar.setFont(new Font("Tahoma", Font.BOLD, 12));

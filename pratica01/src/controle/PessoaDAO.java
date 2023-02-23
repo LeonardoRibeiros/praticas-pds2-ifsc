@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import modelo.Pessoa;
 
 public class PessoaDAO {
-	
+
 	private Conexao con;
-	
+
 	public boolean Inserir(Pessoa pessoa) {
 		con = Conexao.getInstacia();
 		Connection c = con.conectar();
@@ -23,14 +23,14 @@ public class PessoaDAO {
 			stm.setLong(1, pessoa.getCpf());
 			stm.setString(2, pessoa.getNome());
 			int valida = stm.executeUpdate();
-		return true;
-		}catch(SQLException e) {
+			return true;
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		con.fecharConexao();
-		return false;			
+		return false;
 	}
-	
+
 	public boolean alterar(Pessoa pessoa) {
 		Connection conn = Conexao.getInstacia().conectar();
 		try {
@@ -39,30 +39,30 @@ public class PessoaDAO {
 			stm.setString(1, "Leonardo Ribeiro");
 			stm.setLong(2, pessoa.getCpf());
 			int valida = stm.executeUpdate();
-		return true;
-		}catch(SQLException e) {
+			return true;
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		con.fecharConexao();
-		return false;			
+		return false;
 	}
-	
-	public boolean deletar(Pessoa pessoa){
+
+	public boolean deletar(Pessoa pessoa) {
 		Connection conn = Conexao.getInstacia().conectar();
 		try {
 			String query = "DELETE FROM pessoa WHERE cpf = ?";
 			PreparedStatement stm = conn.prepareStatement(query);
 			stm.setLong(1, pessoa.getCpf());
 			int valida = stm.executeUpdate();
-		return true;
-		}catch(SQLException e) {
+			return true;
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		con.fecharConexao();
-		return false;			
+		return false;
 	}
-	
-	public ArrayList<Pessoa>listarPessoas(){
+
+	public ArrayList<Pessoa> listarPessoas() {
 		ArrayList<Pessoa> pessoas = new ArrayList<>();
 		con = Conexao.getInstacia();
 		Connection c = con.conectar();
@@ -70,23 +70,20 @@ public class PessoaDAO {
 			Statement stm = c.createStatement();
 			String query = "Select * from pessoa";
 			ResultSet rs = stm.executeQuery(query);
-			while(rs.next()) {
+			while (rs.next()) {
 				int cpf = rs.getInt("cpf");
 				String nome = rs.getString("nome");
-				Pessoa p= new Pessoa();
+				Pessoa p = new Pessoa();
 				p.setCpf(cpf);
 				p.setNome(nome);
 				pessoas.add(p);
-				
+
 			}
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		con.fecharConexao();
-		return null;
+		return pessoas;
 	}
-		
-	
-	
 
 }
