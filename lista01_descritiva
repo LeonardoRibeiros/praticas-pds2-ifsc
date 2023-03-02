@@ -1,0 +1,14 @@
+1. Pesquise e descreva: no contexto de programação, o que é uma “biblioteca” e o que é uma “API”? Diferencie ambas utilizando as suas próprias palavras.
+R: As bibliotecas são coleções de códigos predefinidos projetados para serem utilizados em outros programas, enquanto uma API é uma interface que especifica como 
+difererentes componentes de software devem interagir entre si. A principal diferença é que a Biblioteca oferce um conjunto de funçoes para executar tarefas expecíficas
+e a API oferece um conjunto de regras para comunicação entre diferentes componentes de software.
+
+2. Defina brevemente e descreva a razão para se utilizar os padrões de projetos abaixo:
+a) MVC
+R:
+
+b) DAO
+R:
+
+c) Singleton
+R:
