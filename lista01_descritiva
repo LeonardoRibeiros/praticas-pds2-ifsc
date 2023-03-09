@@ -1,14 +1,26 @@
 1. Pesquise e descreva: no contexto de programação, o que é uma “biblioteca” e o que é uma “API”? Diferencie ambas utilizando as suas próprias palavras.
+
 R: As bibliotecas são coleções de códigos predefinidos projetados para serem utilizados em outros programas, enquanto uma API é uma interface que especifica como 
 difererentes componentes de software devem interagir entre si. A principal diferença é que a Biblioteca oferce um conjunto de funçoes para executar tarefas expecíficas
 e a API oferece um conjunto de regras para comunicação entre diferentes componentes de software.
 
 2. Defina brevemente e descreva a razão para se utilizar os padrões de projetos abaixo:
+
 a) MVC
-R:
+R: O padrão MVC separa o projeto em três componentes: o modelo, 
+que representa os dados e regras de negócio, a visão, que apresenta a informação ao usuário e o controlador, 
+que lida com a lógica de interação do usuário com a aplicação. A razão para se utilizar o padrão MVC é separar cada componente, 
+aumentar a flexibilidade do sistema e permitir a manutenção do código de forma mais organizada.
 
 b) DAO
-R:
+R: O DAO encapsula os detalhes do acesso aos dados, como consultas SQL, e fornece uma interface abstrata para as outras partes do sistema. 
+A razão para se utilizar o padrão DAO é facilitar a substituição de um banco de dados por outro e simplificar a manutenção do projeto.
 
 c) Singleton
-R:
+R: O padrão Singleton é utilizado para garantir que uma classe tenha apenas uma instância em todo o sistema. Como em um sistema de configuração ou em uma conexão 
+com o banco de dados. A razão para se utilizar o padrão Singleton é garantir a consistência de estado do objeto e evitar conflitos de acesso concorrente.
+
+3. O que é JDBC e como ele se relaciona com bancos de dados e a programação em Java? 
+
+R:JDBC é uma API padrão do Java para se conectar a bancos de dados relacionais. Ela permite que os desenvolvedores Java criem aplicativos que possam se 
+conectar a diferentes bancos de dados, executar consultas, recuperar e manipular dados. 
