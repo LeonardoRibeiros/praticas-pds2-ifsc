@@ -22,5 +22,14 @@ com o banco de dados. A razão para se utilizar o padrão Singleton é garantir 
 
 3. O que é JDBC e como ele se relaciona com bancos de dados e a programação em Java? 
 
-R:JDBC é uma API padrão do Java para se conectar a bancos de dados relacionais. Ela permite que os desenvolvedores Java criem aplicativos que possam se 
+R: JDBC é uma API padrão do Java para se conectar a bancos de dados relacionais. Ela permite que os desenvolvedores Java criem aplicativos que possam se 
 conectar a diferentes bancos de dados, executar consultas, recuperar e manipular dados. 
+
+4. O que significa “CRUD” e como ele se  relaciona com os quatro métodos que implementamos em nossas classes DAO?
+
+R: O Crud é uma sigla referente as 4 principais operações realizadas em um banco de dados; create, read, update e delete. No sistema CRUD, as operações necessitam 
+da implementação de um método em uma classe DAO.
+
+5. Explique brevemente e com suas palavras qual a utilidade das três classes abaixo: Connection, PreparedStatement e Statement;
+
+R:
