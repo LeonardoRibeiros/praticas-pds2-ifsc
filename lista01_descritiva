@@ -26,10 +26,18 @@ R: JDBC é uma API padrão do Java para se conectar a bancos de dados relacionai
 conectar a diferentes bancos de dados, executar consultas, recuperar e manipular dados. 
 
 4. O que significa “CRUD” e como ele se  relaciona com os quatro métodos que implementamos em nossas classes DAO?
-
 R: O Crud é uma sigla referente as 4 principais operações realizadas em um banco de dados; create, read, update e delete. No sistema CRUD, as operações necessitam 
 da implementação de um método em uma classe DAO.
 
 5. Explique brevemente e com suas palavras qual a utilidade das três classes abaixo: Connection, PreparedStatement e Statement;
+R: São classes utilizadas para interagir com bancos de dados em Java. Em resumo, Connection é usada para estabelecer a conexão com o banco de dados, PreparedStatement 
+é utilizada para executar consultas pré-compiladas com parâmetros e Statement é usada para executar consultas simples.
 
-R:
+6. Considere a execução de uma query SQL no banco de dados. Se esperamos um retorno de dados do banco de dados devemos usar a classe Statement ou PreparedStatement? 
+Justifique. (Dica: é possível usar ambas; procure a diferença técnica entre as classes.).
+R: Se esperamos um retorno de dados do banco de dados, o ideal é usar a classe PreparedStatement em vez de Statement. Isso porque a classe PreparedStatement é usada 
+para executar consultas pré-compiladas no banco de dados, o que pode melhorar significativamente a performance em comparação com a classe Statement.
+
+7. Com as suas próprias palavras, diferencie SWING do WINDOWBUILDER.
+Swing é uma biblioteca de componentes gráficos que vem incluída em Java, á o WindowBuilder é uma ferramenta visual de design de interfaces gráficas de usuário. 
+Ela permite que você crie interfaces de usuário para aplicativos Java de forma visual, arrastando e soltando componentes na tela. 
